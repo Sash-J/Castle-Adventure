@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Pirata+One&display=swap');
+
+
+div{
+    padding: 10px;
+    margin: 20px;
+}
+
+.game-container{
+    width: 1080px;
+    height: 720px;
+    background-image:url("Assets/Lg_Background.png");
+    background-size:contain;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border: 1px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px 10px rgb(129, 129, 129);
+}
+
+#login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    max-width: 400px;
+    margin: 0 auto;
+    border: 2px;
+    border-radius: 10px;
+    background-color: white;
+    top: 42%;
+    color: rgb(89, 55, 3);
+    font-size: 30pt;
+    font-family: "Pirata One", Alex Brush;}
+
+label[for^="text-input"]{
+    font-weight: bold;
+}
