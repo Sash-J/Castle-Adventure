@@ -3,12 +3,13 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$database = "user";
+$database = "users";
 
-$conn = new  mysqli($host,$user,$password,$database);
+$conn = new mysqli($host, $user, $password, $database);
 
 if ($conn->connect_error){
-    die("connection failed: ". $conn->connect_error);
-}
+    echo "DB not connected";
 
+    die("connection failed: ". $conn->connect_error);
+} 
 ?>
