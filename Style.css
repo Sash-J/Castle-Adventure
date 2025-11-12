@@ -1,44 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Pirata+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Pirata+One&display=swap");
 
-
-div{
-    padding: 10px;
-    margin: 20px;
+div {
+  padding: 10px;
+  margin: 0;
 }
 
-.game-container{
-    width: 1080px;
-    height: 720px;
-    background-image:url("Assets/Lg_Background.png");
-    background-size:contain;
-    background-position:center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    border: 1px;
-    border-radius: 50px;
-    box-shadow: 0px 0px 10px 10px rgb(129, 129, 129);
+body {
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#login{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    max-width: 400px;
-    margin: 0 auto;
-    border: 2px;
-    border-radius: 10px;
-    background-color: white;
-    top: 42%;
-    color: rgb(89, 55, 3);
-    font-size: 30pt;
-    font-family: "Pirata One", Alex Brush;}
+.container {
+  width: 1280px;
+  height: 720px;  
+  background-image: url("Assets/Lg_Background.png"); /*Generated via OpneAi*/
+  background-size:cover;
+  background-position: center;
+  /*background-repeat: no-repeat;*/
+  background-attachment:fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px 10px rgb(129, 129, 129);
+}
 
-label[for^="text-input"]{
-    font-weight: bold;
+.form{
+  display: none;
+}
+
+.form.active{
+  display: block;
+}
+
+#form-login, #form-register {
+  text-align: center;
+  width: 50vh;
+ /* border: 10px;
+  outline: auto;
+  border-color: black;
+  border-radius: 10px;*/
+  position:fixed;
+  top:28%;
+}
+
+label {
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: rgb(89, 55, 3);
+  font-size: 25pt;
+  font-family: "Pirata One", Alex Brush;
+}
+
+input {
+  text-align: center;
+  width: 45vh;
+  padding: 10px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 15pt;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+h2{
+  font-family: "Pirata One", Alex Brush;
+  font-size: 30pt;
 }

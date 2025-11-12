@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castle Adventure</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <!-- yt by @codehal in Login and registration - full stack -->
+    <div class="container">
+        <form id="form-login" action="Register.php" method="post" class="form active"> <!--connecting with database-->
+            <h2>Login</h2>
+            <Label id="user">Username</Label><br>
+            <input type="text" name="logusername" placeholder="Enter Username" required><br>
+            <label id="pass">Password</label><br>
+            <input type="password" name="logpassword" placeholder="Enter Password" required><br>
+            <button type="submit" name="login">Login</button>
+            <p>Don't have an account? <a href="#" onclick="showForm('form-register')">Login</a></p>
+        </form>
+
+        <form id="form-register" action="Register.php" method="post" action="" class="form"> <!--connecting with database-->
+            <h2>Registration</h2>
+            <label>Name</label>
+            <input type="text" name="regname" placeholder="Enter Name" required><br>
+            <label>Username</label>
+            <input type="text" name="regusername" placeholder="Enter a Username" required><br>
+            <label>Password</label>
+            <input type="text" name="regpassword" placeholder="Enter a Password" required><br>
+            <label>Email</label>
+            <input type="text" name="regtemail" placeholder="Enter a email" required><br>   
+            <button type="submit" name="register">Register</button>
+            <p>Already have an account? <a href="" onclick="showForm('form-login')">Register</a></p>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
