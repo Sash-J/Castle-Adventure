@@ -59,12 +59,27 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 });
 
-// Message box close event
-document.getElementById("closeMessage").addEventListener("click", () => {
-  const box = document.getElementById("messageBox");
-  box.classList.remove('show');
-  box.classList.add('hide');
-  setTimeout(() => box.classList.add('hidden'), 400);
+function startGame() {
+    window.location.href = "Level.php";
+}
+
+function instructions() {
+    alert("Instructions:\n\n• Complete each level.\n• Click Next to continue.\n• Enjoy the Castle Adventure!");
+}
+
+function logout() {
+    window.location.href = "logout.php";
+}
+
+// Message box close event in story levels
+document.addEventListener("DOMContentLoaded", () => {
+    const closeBtn = document.getElementById("closeMessage");
+    if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+            const box = document.getElementById("messageBox");
+            box.classList.remove('show');
+            box.classList.add('hide');
+            setTimeout(() => box.classList.add('hidden'), 400);
+        });
+    }
 });
-
-

@@ -48,14 +48,15 @@ if (isset($_POST['login'])) {
     if (password_verify($password, $user['password'])) {
       $_SESSION['username'] = $user['username'];
       $_SESSION['password'] = $user['password'];
-      header("Location: Level.php");
+      header("Location: Menu.php");
       exit();
     }
   }
 
   //Login failed
   $_SESSION['login_error'] = 'Incorrect username or password';
-  $_SESSION['active_form'] = 'form-login';
+  $_SESSION['active_form'] = 'login';
   header("Location: Login.php");
   exit();
 }
+

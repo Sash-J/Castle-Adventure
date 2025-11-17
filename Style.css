@@ -65,11 +65,29 @@ input {
   margin-bottom: 20px;
 }
 
-p {
+#p1, #p2, #p3 , #p4 ,#p5 , #p6 , #p7 , #p8 , #p9 , #p10 {
   font-size: 20px;
   text-align: center;
+  width: 100%;
+  white-space: pre-line;
+  border-right: 4px solid;
   margin-bottom: 20px;
   padding: 10px;
+  overflow: hidden;
+  animation: typing 3s, cursor 0.4s step-end infinite alternate;
+}
+
+@keyframes typing {
+  from {
+    clip-path: inset(0 0 100% 0);   /* hides all text vertical */
+  }
+  to {
+    clip-path: inset(0 0 0 0);      /* reveals line by line */
+  }
+}
+
+@keyframes cursor{
+  50% {border-color: transparent;}
 }
 
 h2 {
@@ -97,9 +115,8 @@ h2 {
   background-attachment: fixed;
   display: flex;
   align-items: center;
+  text-align: center;
   justify-content: center;
-  border: none;
-  outline: none;
   border-radius: 50px;
   box-shadow: 0px 0px 10px 10px rgb(129, 129, 129);
   position: relative;
@@ -122,7 +139,8 @@ h2 {
 /*---------------Message box------------- */
 #messageBox {
   display: flex;
-  position:fixed;
+  flex-direction: column;
+  position: fixed;
   height: 272px;
   width: 485px;
   background-image: url("Assets/MessageBox.png");
@@ -193,4 +211,52 @@ h2 {
     opacity: 0;
     transform: translateY(-10px);
   }
+}
+
+/*--------------- Menu ------------- */
+/* .menu-container {
+    text-align: center;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 20px;
+    width: 380px;
+    box-shadow: 0px 0px 30px #000;
+} */
+
+.menuTitle {
+  font-size: 42px;
+  color: #fff;
+  margin-bottom: 30px;
+  text-shadow: 0px 0px 10px #ffca7a;
+  letter-spacing: 3px;
+}
+
+.menu-buttons button {
+  width: 200px;
+  padding: 12px;
+  margin: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-buttons button:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 0px 10px #ffe1a6;
+}
+
+.menu-buttons button:nth-child(1) {
+  background: #ffc857;
+}
+
+.menu-buttons button:nth-child(2) {
+  background: #4ea5ff;
+}
+
+.menu-buttons button:nth-child(3) {
+  background: #ff4e4e;
+  color: #fff;
 }

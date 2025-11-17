@@ -7,14 +7,12 @@ $errors = [
 ];
 $activeForm = $_SESSION['active_form'] ?? 'login';
 
-session_unset();
-
 function showError($errors)
 {
-    return !empty($errors) ? "<p class='error-message'>$errors</p>" : '';
+    return !empty($errors) ? "<p class='error-messege'>$errors</p>" : '';
 }
 
-function isActiveForm($formName, $activeForm) /* Setting the active block */
+function isActiveForm($formName, $activeForm) /* Setting the active form */
 {
     return $formName === $activeForm ? 'active' : '';
 }
@@ -32,16 +30,12 @@ function isActiveForm($formName, $activeForm) /* Setting the active block */
 </head>
 
 <body>
-
-
     <!-- yt by @codehal in Login and registration - full stack -->
-    <!-- Messege Box -->
-    
     <div class="container">
         <div class="form <?= isActiveForm('login', $activeForm); ?>" id="form-login">
-            <form action="Register.php" method="post">
+            <form action="Auth.php" method="post">
+                <?= showError($errors['login']); ?>
                 <h2>Login</h2>
-                <?= showError($errors['login']); ?> <!-- check for errors in username and password and if any display message -->
                 <Label id="user">
                     Username<br>
                     <input type="text" name="logusername" placeholder="Enter Username" required>
@@ -56,9 +50,8 @@ function isActiveForm($formName, $activeForm) /* Setting the active block */
         </div>
 
         <div class="form <?= isActiveForm('register', $activeForm); ?>" id="form-register">
-            <form action="Register.php" method="post">
+            <form action="Auth.php" method="post">
                 <h2>Registration</h2>
-                <?= showError($errors['register']); ?>
                 <label>
                     Name
                     <input type="text" name="regname" placeholder="Enter Name" required>
@@ -69,7 +62,7 @@ function isActiveForm($formName, $activeForm) /* Setting the active block */
                 </label><br>
                 <label>
                     Password
-                    <input type="text" name="regpassword" placeholder="Enter a Password" required>
+                    <input type="password" name="regpassword" placeholder="Enter a Password" required>
                 </label><br>
                 <label>
                     Email
@@ -85,3 +78,4 @@ function isActiveForm($formName, $activeForm) /* Setting the active block */
 </body>
 
 </html>
+
