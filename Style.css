@@ -6,19 +6,18 @@ div {
 }
 
 body {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .container {
   width: 1280px;
-  height: 720px;  
+  height: 720px;
   background-image: url("Assets/Lg_Background.png"); /*Generated via OpneAi*/
-  background-size:cover;
+  background-size: cover;
   background-position: center;
-  /*background-repeat: no-repeat;*/
-  background-attachment:fixed;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,26 +25,23 @@ body {
   outline: none;
   border-radius: 50px;
   box-shadow: 0px 0px 10px 10px rgb(129, 129, 129);
+  position: relative;
+  overflow: hidden;
 }
 
-.form{
+.form {
   display: none;
 }
 
-.form.active{
+.form.active {
   display: block;
-  
 }
 
-#form-login, #form-register {
+.form {
   text-align: center;
-  width: 50vh;
- /* border: 10px;
-  outline: auto;
-  border-color: black;
-  border-radius: 10px;*/
-  position:fixed;
-  top:28%;
+  position: absolute;
+  box-sizing: border-box;
+  top: 28%;
 }
 
 label {
@@ -69,24 +65,198 @@ input {
   margin-bottom: 20px;
 }
 
-p {
+#p1, #p2, #p3 , #p4 ,#p5 , #p6 , #p7 , #p8 , #p9 , #p10 {
   font-size: 20px;
   text-align: center;
+  width: 100%;
+  white-space: pre-line;
+  border-right: 4px solid;
   margin-bottom: 20px;
   padding: 10px;
+  overflow: hidden;
+  animation: typing 3s, cursor 0.4s step-end infinite alternate;
 }
 
-h2{
+@keyframes typing {
+  from {
+    clip-path: inset(0 0 100% 0);   /* hides all text vertical */
+  }
+  to {
+    clip-path: inset(0 0 0 0);      /* reveals line by line */
+  }
+}
+
+@keyframes cursor{
+  50% {border-color: transparent;}
+}
+
+h2 {
   font-family: "Pirata One", Alex Brush;
   font-size: 30pt;
 }
 
-.error-messege{
-  padding: 20px;
+.error-messege {
+  padding: 10px;
   background: wheat;
   border-radius: 8px;
   font-size: 16px;
   color: red;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+/* ------------------- Level css ---------------*/
+.game-container {
+  width: 1280px;
+  height: 720px;
+  background-image: url("Assets/Game_Background.png"); /*Generated via OpneAi*/
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px 10px rgb(129, 129, 129);
+  position: relative;
+  overflow: hidden;
+}
+
+.story {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  color: #070707;
+  font-size: 1.2em;
+}
+
+.story.active {
+  display: block;
+  opacity: 1;
+}
+
+/*---------------Message box------------- */
+#messageBox {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 272px;
+  width: 485px;
+  background-image: url("Assets/MessageBox.png");
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  pointer-events: none;
+}
+
+#messageBox.show {
+  opacity: 1;
+  pointer-events: auto;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+#messageBox.hide {
+  animation: fadeOut 0.4s ease forwards;
+  pointer-events: none;
+}
+
+#messageBox.hidden {
+  display: none;
+}
+
+#messageBox.info {
+  border-color: #2196f3;
+  color: #0d47a1;
+}
+
+#messageBox #closeMessage {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: inherit;
+  cursor: pointer;
+}
+
+#message {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: inherit;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/*--------------- Menu ------------- */
+/* .menu-container {
+    text-align: center;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 20px;
+    width: 380px;
+    box-shadow: 0px 0px 30px #000;
+} */
+
+.menuTitle {
+  font-size: 42px;
+  color: #fff;
+  margin-bottom: 30px;
+  text-shadow: 0px 0px 10px #ffca7a;
+  letter-spacing: 3px;
+}
+
+.menu-buttons button {
+  width: 200px;
+  padding: 12px;
+  margin: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-buttons button:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 0px 10px #ffe1a6;
+}
+
+.menu-buttons button:nth-child(1) {
+  background: #ffc857;
+}
+
+.menu-buttons button:nth-child(2) {
+  background: #4ea5ff;
+}
+
+.menu-buttons button:nth-child(3) {
+  background: #ff4e4e;
+  color: #fff;
 }
