@@ -16,6 +16,8 @@
             <button id="closeMessage">Close</button>
         </div>
 
+        <img id="detectiveCharacter" src="Assets/character01.png" class="detective hidden">
+
         <div class="storyContent">
             <p id="p1" class="story active">title: "The Rainy Morning",
                 story: `Rain pounded the courtyard. The royal guard found shattered glass and an empty cushion where the crown had rested. The chest in the throne room was forced open — but the thief left no footprints.\n\nYou examine the scene. A narrow smear of muddy gold dust leads toward the old tower.`,
