@@ -36,39 +36,64 @@ function isActiveForm($formName, $activeForm) /* Setting the active form */
             <form action="Auth.php" method="post">
                 <?= showError($errors['login']); ?>
                 <h2>Login</h2>
-                <Label id="user">
+                <Label>
                     Username<br>
-                    <input type="text" name="logusername" placeholder="Enter Username" required>
-                </Label><br>
-                <label id="pass">
+                    <input type="text" name="logusername" placeholder="Enter Username" alt="Enter Username">
+                </Label><br><br>
+                <label>
                     Password<br>
-                    <input type="password" name="logpassword" placeholder="Enter Password" required>
+                    <input type="password" name="logpassword" placeholder="Enter Password" alt="Enter Password">
                 </label><br>
-                <button type="submit" name="login">Login</button>
+                <button type="submit" name="login" class="img-btn">
+                    <img class="btn-image" src="./Assets/Button_1.png">
+                    <span class="Btn-text">Login</span>
+                </button>
                 <p>Don't have an account? <a href="#" onclick="showForm('form-register')">Register</a></p>
             </form>
         </div>
 
         <div class="form <?= isActiveForm('register', $activeForm); ?>" id="form-register">
             <form action="Auth.php" method="post">
+                <?= showError($errors['register']); ?>
                 <h2>Registration</h2>
-                <label>
-                    Name
-                    <input type="text" name="regname" placeholder="Enter Name" required>
-                </label><br>
-                <label>
-                    Username
-                    <input type="text" name="regusername" placeholder="Enter a Username" required>
-                </label><br>
-                <label>
-                    Password
-                    <input type="password" name="regpassword" placeholder="Enter a Password" required>
-                </label><br>
-                <label>
-                    Email
-                    <input type="text" name="regemail" placeholder="Enter a email" required>
-                </label><br>
-                <button type="submit" name="register">Register</button>
+                <table>
+                    <tr>
+                        <td>
+                            <label>Name&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><br>
+                        </td>
+                        <td>
+                            <input type="text" name="regname" placeholder="Enter a Name" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Username&nbsp&nbsp</label><br>
+                        </td>
+                        <td>
+                            <input type="text" name="regusername" placeholder="Enter Username" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Password&nbsp&nbsp</label><br>
+                        </td>
+                        <td>
+                            <input type="password" name="regpassword" placeholder="Enter Password" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Email&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><br>
+                        </td>
+                        <td>
+                            <input type="text" name="regemail" placeholder="Enter Email" required>
+                        </td>
+                    </tr>
+                </table>
+                <button type="submit" name="register" class="img-btn">
+                    <img class="btn-image" src="./Assets/Button_1.png">
+                    <span class="Btn-text">Register</span>
+                </button>
                 <p>Already have an account? <a href="" onclick="showForm('form-login')">Login</a></p>
             </form>
         </div>
@@ -78,4 +103,3 @@ function isActiveForm($formName, $activeForm) /* Setting the active form */
 </body>
 
 </html>
-
