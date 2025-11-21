@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (isset($_GET['form'])) {
+    $_SESSION['active_form'] = $_GET['form'];
+}
 
 $errors = [
     'login' => $_SESSION['login_error'] ?? '',
@@ -48,7 +51,7 @@ function isActiveForm($formName, $activeForm) /* Setting the active form */
                     <img class="btn-image" src="./Assets/Button_1.png">
                     <span class="Btn-text">Login</span>
                 </button>
-                <p>Don't have an account? <a href="#" onclick="showForm('form-register')">Register</a></p>
+                <p>Don't have an account? <a href="login.php?form=register">Register</a></p>
             </form>
         </div>
 
@@ -94,7 +97,7 @@ function isActiveForm($formName, $activeForm) /* Setting the active form */
                     <img class="btn-image" src="./Assets/Button_1.png">
                     <span class="Btn-text">Register</span>
                 </button>
-                <p>Already have an account? <a href="" onclick="showForm('form-login')">Login</a></p>
+                <p>Already have an account? <a href="login.php?form=login">Login</a></p>
             </form>
         </div>
     </div>
