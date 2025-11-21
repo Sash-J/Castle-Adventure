@@ -34,6 +34,7 @@ if (isset($_POST['register'])) {
   }
 }
 
+// test comment
 // ----------Login---------------
 if (isset($_POST['login'])) {
   $username = $_POST['logusername'];
