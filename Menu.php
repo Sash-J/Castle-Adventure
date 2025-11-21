@@ -25,17 +25,17 @@ if (!isset($_SESSION['username'])) {
             <h3>Detective <?= htmlspecialchars($_SESSION['username']); ?>!</h3>
             <div class="menu-buttons">
                 <button id="startGame" onclick="startGame()" class="img-btn">
-                    <img class="btn-image" src="./Assets/Button_1.png">
+                    <img class="btn-image" src="./Assets/Button_2.png">
                     <span class="Btn-text">Start</span>
                 </button><br>
 
                 <button onclick="instructions()" class="img-btn">
-                    <img class="btn-image" src="./Assets/Button_1.png">
+                    <img class="btn-image" src="./Assets/Button_2.png">
                     <span class="Btn-text">Instructions</span>
                 </button><br>
 
                 <button onclick="logout()" class="img-btn">
-                    <img class="btn-image" src="./Assets/Button_1.png">
+                    <img class="btn-image" src="./Assets/Button_2.png">
                     <span class="Btn-text">Logout</span>
                 </button><br>
             </div>
