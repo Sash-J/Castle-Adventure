@@ -37,6 +37,13 @@ function showLevel(storyId) {
     document.querySelectorAll(".story").forEach(story => story.classList.remove("active"));
     const targetStory = document.getElementById(storyId);
     if (targetStory) targetStory.classList.add("active");
+
+    // detective character animation function
+    const detective = document.getElementById("detectiveCharacter");
+    if (detective) {
+        detective.classList.remove("hidden");
+        detective.classList.add("show");
+    }
 }
 
 //starting the story with function showStory()
