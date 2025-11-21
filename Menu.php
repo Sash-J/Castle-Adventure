@@ -19,13 +19,26 @@ if (!isset($_SESSION['username'])) {
 
 <body>
 
-    <div class="game-container">
-        <h1 class="menuTitle">Menu</h1>
-        <h3 style="color:white;">Welcome, <?= htmlspecialchars($_SESSION['username']); ?>!</h3>
-        <div class="menu-buttons">
-            <button id="startGame" onclick="startGame()">Play</button>
-            <button onclick="instructions()">Instructions</button>
-            <button onclick="logout()">Logout</button>
+    <div class="container">
+        <div class="menu-container">
+            <h2>Menu</h2>
+            <h3>Detective <?= htmlspecialchars($_SESSION['username']); ?>!</h3>
+            <div class="menu-buttons">
+                <button id="startGame" onclick="startGame()" class="img-btn">
+                    <img class="btn-image" src="./Assets/Button_1.png">
+                    <span class="Btn-text">Start</span>
+                </button><br>
+
+                <button onclick="instructions()" class="img-btn">
+                    <img class="btn-image" src="./Assets/Button_1.png">
+                    <span class="Btn-text">Instructions</span>
+                </button><br>
+
+                <button onclick="logout()" class="img-btn">
+                    <img class="btn-image" src="./Assets/Button_1.png">
+                    <span class="Btn-text">Logout</span>
+                </button><br>
+            </div>
         </div>
     </div>
 
