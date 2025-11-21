@@ -24,7 +24,7 @@ if (isset($_POST['register'])) {
     $insert = $conn->query("INSERT INTO user (name, username, password, email) VALUES ('$name', '$username', '$password', '$email')");
     if ($insert) {
       $_SESSION['register_success'] = 'Registertion Success';
-      $_SESSION['active_form'] = 'register';
+      $_SESSION['active_form'] = 'login';
       header("Location: Login.php");
       exit();
     } else {
