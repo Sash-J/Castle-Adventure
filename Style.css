@@ -137,24 +137,17 @@ a:hover {
   white-space: pre-line;
   border-right: 4px solid;
   margin-bottom: 20px;
-  padding: 10px;
-  overflow: hidden;
-  animation: typing 3s, cursor 0.4s step-end infinite alternate;
+  overflow: auto;
+  animation: fadeInText 3s forwards;
   font-family: "Pirata One", Alex Brush;
 }
 
-@keyframes typing {
+@keyframes fadeInText {
   from {
     clip-path: inset(0 0 100% 0);
   }
   to {
     clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes cursor {
-  50% {
-    border-color: transparent;
   }
 }
 
@@ -198,7 +191,7 @@ h3 {
 }
 
 .error-messege:hover {
-  background: #f3d7a1;
+  background: #feeac1;
 }
 
 /*Login & Register Button Effects*/
@@ -215,7 +208,7 @@ h3 {
 
 .btn-image {
   display: block;
-  width: 200px;
+  width: 220px;
   height: auto;
   transition: 0.3s;
 }
@@ -256,6 +249,12 @@ h3 {
   box-shadow: 0px 0px 10px 10px rgb(129, 129, 129);
   position: relative;
   overflow: hidden;
+}
+
+.storyContent {
+  position: absolute;
+  padding-right: 20vw;
+  padding-left: 5vw;
 }
 
 .story {
@@ -371,7 +370,7 @@ h3 {
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
-  margin-bottom: 2vh;
+  margin-bottom: 3vh;
 }
 
 .menu-buttons button:hover {
@@ -398,4 +397,3 @@ h3 {
 .detective.hidden {
   opacity: 0;
 }
-
