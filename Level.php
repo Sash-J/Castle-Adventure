@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="game-container">
+    <div class="gameContainer">
         <!-- Message Box -->
         <div id="messageBox" class="hidden">
             <div id="message"></div>

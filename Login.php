@@ -33,7 +33,9 @@ function isActiveForm($formName, $activeForm) /* Setting the active form */
 </head>
 
 <body>
-    <!-- yt by @codehal in Login and registration - full stack -->
+
+<!-- git operation handle advice and guidance from Heshan Koralagamage @ virtusa -->
+<!-- yt by @codehal in Login and registration - full stack -->
     <div class="container">
         <div class="form <?= isActiveForm('login', $activeForm); ?>" id="form-login">
             <form action="Auth.php" method="post">
