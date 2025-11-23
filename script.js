@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (nextBtn) {
 
         nextBtn.addEventListener("click", () => {
+            bananaGame();
             if (currentLevel < totalLevels) {
                 currentLevel++;
                 showLevel("p" + currentLevel);
@@ -90,3 +91,61 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+/*------- Reffered from OpenAI --------------*/
+function bananaGame() {
+    const gameContainer = document.querySelector(".gameContainer");
+    const storyContent = document.querySelector(".story");
+
+    const overlay = document.createElement('div');
+    overlay.id = 'banana-overlay';
+    overlay.innerHTML = `
+        <div class="banana-container">
+            <h2>🍌 Banana Puzzle</h2>
+            <img id="bananaImage" src="" alt="Banana Puzzle" />
+            <input type="text" id="bananaAnswer" placeholder="Enter your answer..." />
+            <button id="submitAnswer">Submit</button>
+            <p id="bananaMessage"></p>
+        </div>
+    `;
+
+    gameContainer.appendChild(overlay);
+
+    const bananaImg = overlay.querySelector('#bananaImage');
+    const msg = overlay.querySelector('#bananaMessage');
+    const btn = overlay.querySelector('#submitAnswer');
+
+    // Fetch puzzle image from Banana API
+    fetch('https://marcconrad.com/uob/banana/api.php')
+        .then(res => res.json())
+        .then(data => {
+            bananaImg.src = data.question;
+            bananaImg.dataset.expected = data.solution; // store solution temporarily
+        })
+        .catch(err => {
+            msg.textContent = "Failed to load puzzle.";
+            console.error(err);
+        });
+
+    btn.addEventListener('click', () => {
+    const userAnswer = overlay.querySelector('#bananaAnswer').value.trim();
+    const correctAnswer = bananaImg.dataset.expected;
+
+    if (!userAnswer) {
+        msg.textContent = "Please enter an answer.";
+        return;
+    }
+
+    if (userAnswer === correctAnswer) {
+        msg.textContent = "Correct! Continue the game!";
+        setTimeout(() => {
+            overlay.remove();
+        }, 1000);
+    } else {
+        msg.textContent = "Wrong answer! Game Over!";
+        setTimeout(() => {
+            overlay.remove();
+        }, 1000);
+    }
+});
+}
