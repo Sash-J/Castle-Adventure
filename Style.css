@@ -234,7 +234,7 @@ h3 {
 }
 
 /* ------------------- Level css ---------------*/
-.game-container {
+.gameContainer {
   width: 1080px;
   height: 90vh;
   background-image: url("Assets/Game_Background.png"); /*Generated via OpneAi*/
