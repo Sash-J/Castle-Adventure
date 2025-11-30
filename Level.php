@@ -16,6 +16,11 @@
             <button id="closeMessage">Close</button>
         </div>
 
+        <label Type="text">
+            <img id="levelInd" src="Assets/button_3.png">
+            <span id="levelIndicator"></span>
+        </label>
+
         <img id="detectiveCharacter" src="Assets/character01.png" class="detective hidden">
 
         <div class="storyContent">
@@ -59,7 +64,7 @@
                 story: `All clues converge. The muddy track, rope fibers, hunting emblem, false ledger entry, silver powder, eastern quay, scratched registry, tailor label, and the 'preserve the line' note — they point to a conspirator with motive and access.\n\nOne final Banana puzzle stands between you and the name of the stealer.`,
                 clue: "Reveal: Solve the final puzzle and learn the culprit's full identity."</p>
 
-            <button id="nextLevel">Next Level</button>
+            <button id="unlockClue">Unlock Clue</button>
         </div>
     </div>
 
