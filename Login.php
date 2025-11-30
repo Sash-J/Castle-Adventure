@@ -8,11 +8,23 @@ $errors = [
     'login' => $_SESSION['login_error'] ?? '',
     'register' => $_SESSION['register_error'] ?? ''
 ];
+
+$successMsg = $_SESSION['register_success'] ?? '';
+
+unset($_SESSION['login_error']);
+unset($_SESSION['register_error']);
+unset($_SESSION['register_success']);
+
 $activeForm = $_SESSION['active_form'] ?? 'login';
 
 function showError($errors)
 {
     return !empty($errors) ? "<p class='error-messege'>$errors</p>" : '';
+}
+
+function showSuccess($successMsg)
+{
+    return !empty($successMsg) ? "<p class='success-messege'>$successMsg</p>" : '';
 }
 
 function isActiveForm($formName, $activeForm) /* Setting the active form */
@@ -33,17 +45,22 @@ function isActiveForm($formName, $activeForm) /* Setting the active form */
 </head>
 
 <body>
-
-<!-- git operation handle advice and guidance from Heshan Koralagamage @ virtusa -->
-<!-- yt by @codehal in Login and registration - full stack -->
+    <!-- W3C School tutorial reference  -->
+    <!-- yt by @codehal in Login and registration - full stack ----- https://youtu.be/LiomRvK7AM8 -->
+    <!----------- Login -------------->
     <div class="container">
+
+        <?= showSuccess($successMsg); ?>
+        <?= showError($errors['login']); ?>
+
         <div class="form <?= isActiveForm('login', $activeForm); ?>" id="form-login">
             <form action="Auth.php" method="post">
-                <?= showError($errors['login']); ?>
+
                 <h2>Login</h2>
                 <Label>
                     Username<br>
-                    <input type="text" name="logusername" placeholder="Enter Username" alt="Enter Username">
+                    <input type="text" name="logusername" placeholder="Enter Username" alt="Enter Username"
+                        value="<?php echo isset($_SESSION['current_username']) ? $_SESSION['current_username'] : ''; ?>">
                 </Label><br><br>
                 <label>
                     Password<br>
@@ -57,9 +74,14 @@ function isActiveForm($formName, $activeForm) /* Setting the active form */
             </form>
         </div>
 
+        <!----------- Registration -------------->
         <div class="form <?= isActiveForm('register', $activeForm); ?>" id="form-register">
             <form action="Auth.php" method="post">
-                <?= showError($errors['register']); ?>
+
+                <?php unset($_SESSION['current_username']);  //unset temporary saved username
+                showError($errors['register']); ?>
+                <!-- catch any errors in registration-->
+
                 <h2>Registration</h2>
                 <table>
                     <tr>
