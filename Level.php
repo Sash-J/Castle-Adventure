@@ -28,17 +28,22 @@
 
         <img id="detectiveCharacter" src="Assets/character01.png" class="detective">
 
+        <div class="clueContainer" id="clueBox">
+            <h3>Clues Found</h3>
+            <ul id="clueList"></ul>
+        </div>
+
         <div class="storyContent">
             <div id="p1" class="story active">
                 <p class="storyTitle" hidden>" The Rainy Morning "</p>
-                <p class="storyPara">Rain pounded the courtyard. The royal guard found shattered glass and an empty cushion where the crown had rested. The chest in the throne room was forced open — but the thief left no footprints.<br>You examine the scene. A narrow smear of muddy gold dust leads toward the old tower.</p>
-                <p class="clue" hidden>"A muddy gold smear found near the tower - someone with access to the stables could have left it."</p>
+                <p class="storyPara">Rain pounded the courtyard. The royal guard found shattered glass and an empty cushion where the crown had rested. The chest in the throne room was forced open but the thief left no footprints.<br><br>You examine the scene. A narrow smear of muddy gold dust leads toward the stables.<br><br>Nearby, Lord Harrington, a wealthy noble known for his obsession with family legacy, was inspecting his jewels, frowning at the disrupted order.</p>
+                <p class="clue" hidden>"A muddy gold smear found near the tower, someone with access to the stables could have left it."</p>
             </div>
 
             <div id="p2" class="story">
                 <p class="storyTitle" hidden>" The Tower Door "</p>
-                <p class="storyPara">The tower door was bolted from the inside. A rope hangs from the parapet as if someone made a quick descent. An overturned lantern lies at the top of the spiral staircase.<br>The guard says the housekeeper was in the tower at dawn.</p>
-                <p class="clue" hidden>Rope fibers matched a coarse hemp — not typical for a noble's cloak; the housekeeper manages ropes in the tower.</p>
+                <p class="storyPara">The tower door was bolted from the inside. A rope hangs from the parapet as if someone made a quick descent. An overturned lantern lies at the top of the spiral staircase. Jasper, the stablehand who knows the grounds like the back of his hand, recalls seeing a shadowy figure near the rope, moving quickly and silently.<br><br>In the courtyard, Lady Evangeline, a clever socialite with a taste for gossip, passed carrying a bundle of papers.</p>
+                <p class="clue" hidden>Rope fibers matched a coarse hemp, not typical for a noble's cloak. The housekeeper manages ropes in the tower.</p>
             </div>
 
             <div id="p3" class="story">
