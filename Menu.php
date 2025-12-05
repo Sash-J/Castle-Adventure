@@ -20,9 +20,11 @@ if (!isset($_SESSION['username'])) {
 <body>
 
     <div class="container">
+        <div class="titleImg"><img src="./Assets/Title.png"></div>
+
         <div class="menu-container">
             <h2>Menu</h2>
-            <h3>Detective <?= htmlspecialchars($_SESSION['username']); ?>!</h3>
+            <h3>Welcome!<br>Detective <?= htmlspecialchars($_SESSION['username']); ?>!</h3>
             <div class="menu-buttons">
                 <button id="startGame" onclick="startGame()" class="img-btn">
                     <img class="btn-image" src="./Assets/Button_2.png">
