@@ -49,8 +49,8 @@ function isActiveForm($formName, $activeForm) /* Setting the active form */
     <!-- yt by @codehal in Login and registration - full stack ----- https://youtu.be/LiomRvK7AM8 -->
     <!----------- Login -------------->
     <div class="container">
+        <div class="titleImg"><img src="./Assets/Title.png"></div>
 
-        <?= showSuccess($successMsg); ?>
         <?= showError($errors['login']); ?>
 
         <div class="form <?= isActiveForm('login', $activeForm); ?>" id="form-login">
@@ -72,11 +72,17 @@ function isActiveForm($formName, $activeForm) /* Setting the active form */
                 </button>
                 <p>Don't have an account? <a href="login.php?form=register">Register</a></p>
             </form>
+            <button type="button" name="guestBtn" class="guestImg-btn" onclick="guestLogin()">
+                <img class="guestBtn-image" src="./Assets/Button_1.png">
+                <span class="guest-text">Guest Player</span>
+            </button>
         </div>
 
         <!----------- Registration -------------->
         <div class="form <?= isActiveForm('register', $activeForm); ?>" id="form-register">
             <form action="Auth.php" method="post">
+
+                <?= showSuccess($successMsg); ?>
 
                 <?php unset($_SESSION['current_username']);  //unset temporary saved username
                 showError($errors['register']); ?>
