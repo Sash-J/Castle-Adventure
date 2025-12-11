@@ -5,6 +5,17 @@
 // Using general google searches
 
 
+// preloading all assets to remove flicker
+window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+}); // // Referencing from : https://chatgpt.com/
+
+// initiate transitions when loaded
+window.addEventListener("load", () => {
+    document.body.classList.add("ready");
+});
+
+
 // login and register form active status
 function showForm(formId) {
     document.querySelectorAll(".form").forEach(form => form.classList.remove("active"));
@@ -36,7 +47,7 @@ function startGame() {
 }
 
 function instructions() {
-    alert("Instructions:\n\n• Complete each level.\n• Click Next to continue.\n• Enjoy the Castle Adventure!");
+    alert("Instructions:\n\n• Complete each level.\n• Click Next to continue.\n• Enjoy the Castle Mystery!");
 }
 
 function logout() {
