@@ -42,6 +42,24 @@ function isActiveForm($formName, $activeForm) /* Setting the active form */
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Castle Adventure</title>
     <link rel="stylesheet" href="Style.css">
+
+    <link rel="preload" href="Assets/Button_1.png" as="image">
+    <link rel="preload" href="Assets/Button_2.png" as="image">
+    <link rel="preload" href="Assets/Button_3.png" as="image">
+    <link rel="preload" href="Assets/Button_4.png" as="image">
+    <link rel="preload" href="Assets/Button_5.png" as="image">
+    <link rel="preload" href="Assets/character01.png" as="image">
+    <link rel="preload" href="Assets/character02.png" as="image">
+    <link rel="preload" href="Assets/Game_Background.png" as="image">
+    <link rel="preload" href="Assets/Lg_Background.png" as="image">
+    <link rel="preload" href="Assets/MessageBox.png" as="image">
+    <link rel="preload" href="Assets/MessageBox01.png" as="image">
+    <link rel="preload" href="Assets/MessageBox02.png" as="image">
+
+    <link rel="preload" href="https://fonts.gstatic.com/s/alexbrush/v19/SZc43FDpIKu6Hn4zHrekYw.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/pirataone/v17/I_urMpiDvgLdLh0fAtoft_SebaPcwNol.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/grenzegotisch/v17/0Fl5VN1Iz6e-B7j9F54FR920W5c.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/moondance/v7/uU9PCBUV5E0G4CCltZI4lw.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 
 <body>
