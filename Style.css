@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Pirata+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=MedievalSharp&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=Moon+Dance&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&display=swap"); */
 
 /*------------ W3C School tutorial reference --------------*/
+* {
+  transition: none;
+}
 
 div {
   padding: 15px;
@@ -10,10 +13,21 @@ div {
 }
 
 body {
+  opacity: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Pirata One", Alex Brush;
+  transition: opacity 0.4s ease;
+}
+
+body,
+loaded {
+  opacity: 1;
+}
+
+body.ready {
+  transition: initial;
 }
 
 .container {
@@ -395,17 +409,24 @@ h4 {
   height: fit-content;
   width: 40vw;
   font-size: 1.4em;
+  line-height: 1.2em;
   text-align: center;
-  white-space: pre-line;
+  white-space: normal;
   background-color: #ffe2a9;
   border-radius: 1vw;
   padding: 20px;
   margin-bottom: 20px;
   overflow: auto;
   animation: fadeInText 3s forwards;
-  font-family: "Grenze Gotisch", serif;
   font-weight: bold;
   cursor: context-menu;
+}
+
+.storyPara p {
+  display: flex;
+  flex-direction: column;
+  font-family: "Grenze Gotisch", serif;
+  gap: 1em;
 }
 
 #messageBox[data-type="title"] #message {
@@ -691,7 +712,7 @@ h4 {
   font-size: 16pt;
   color: rgb(89, 53, 0);
   pointer-events: none;
-  transition: all 0.3s ease;
+  transition: margin-top 0.3s ease, font-size 0.3s ease;
 }
 
 #clueList {
@@ -699,6 +720,8 @@ h4 {
   opacity: 0;
   overflow: hidden;
   padding-right: 0;
+  margin: 0;
+  margin-top: 2px;
   transition: max-height 0.4s ease, opacity 0.4s ease, padding-right 0.3s ease;
 }
 
@@ -710,16 +733,16 @@ h4 {
   line-height: 12pt;
   color: #3c2400;
   transition: font-size 0.3s ease-out, line-height 0.3s ease;
-  gap: 2px;
+  gap: 3px;
 }
 
 /*Hovers*/
-.clueContainer:hover:hover {
+.clueContainer:hover {
   top: 1.5vh;
   right: 4%;
   width: 300px;
   height: 150px;
-  transform: scale(1.25);
+  transform: scale(1.3);
   filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.6));
   z-index: 2000;
 }
@@ -731,9 +754,21 @@ h4 {
 }
 
 .clueContainer:hover #clueList {
-  max-height: 55px;
+  max-height: 53px;
   opacity: 1;
   overflow-y: auto;
   padding-right: 15px;
-  z-index: 2100;
+}
+
+#clueList::-webkit-scrollbar {
+  width: 6px;
+}
+
+#clueList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#clueList::-webkit-scrollbar-thumb {
+  background: #ffe5b7;
+  border-radius: 10px;
 }
